@@ -7,10 +7,10 @@ use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Models\Customer;
 
-class CustomerController extends Controller
+class CustomersController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a    listing of the resource.
      */
     public function index()
     {
