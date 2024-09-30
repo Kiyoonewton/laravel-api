@@ -19,12 +19,8 @@ class InvoicesController extends Controller
     public function index(Request $request)
     {
         $filter = new InvoicesFilter();
-        $queryItems = $filter->transform($request);
-        if (count($queryItems) == 0) {
-            return new InvoiceCollection(Invoices::paginate());
-        } else {
-            return new InvoiceCollection(Invoices::where($queryItems)->paginate());
-        }
+        $filterItems = $filter->transform($request);
+        return new InvoiceCollection(Invoices::where($filterItems)->paginate());
     }
 
     /**
